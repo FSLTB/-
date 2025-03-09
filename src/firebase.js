@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
+// Firebase 設定（請確保你的 Firebase Console 設定正確）
 const firebaseConfig = {
   apiKey: "AIzaSyC5z8QTILs5qQqk4qrOFcPH3XXOYqNppmg",
   authDomain: "barrow-system.firebaseapp.com",
@@ -15,20 +16,22 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+// Google 登入
 const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
-    console.log("登入成功", result.user);
+    console.log("✅ 登入成功", result.user);
     return result.user;
   } catch (error) {
-    console.error("登入失敗", error);
+    console.error("❌ 登入失敗:", error);
     return null;
   }
 };
 
+// Google 登出
 const logout = async () => {
   await signOut(auth);
-  console.log("已登出");
+  console.log("✅ 已登出");
 };
 
 export { auth, loginWithGoogle, logout };
