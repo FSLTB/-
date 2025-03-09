@@ -1,14 +1,13 @@
- 
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC5z8QTiL5qQqk4qOfcPH3XYOqNpmg",
-  authDomain: "barrow-system.firebaseapp.com",
-  projectId: "barrow-system",
-  storageBucket: "barrow-system.appspot.com",
-  messagingSenderId: "14273318132",
-  appId: "1:14273318132:web:6553f3857f90a7f73062a1"
+  apiKey: "你的 API Key",
+  authDomain: "你的 Firebase 項目 ID.firebaseapp.com",
+  projectId: "你的 Firebase 項目 ID",
+  storageBucket: "你的 Firebase 項目 ID.appspot.com",
+  messagingSenderId: "你的 Sender ID",
+  appId: "你的 App ID"
 };
 
 // 初始化 Firebase
@@ -16,7 +15,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-// Google 登入函式
 const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
@@ -28,7 +26,6 @@ const loginWithGoogle = async () => {
   }
 };
 
-// 登出函式
 const logout = async () => {
   await signOut(auth);
   console.log("已登出");
