@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "你的 API Key",
-  authDomain: "你的 Firebase 項目 ID.firebaseapp.com",
-  projectId: "你的 Firebase 項目 ID",
-  storageBucket: "你的 Firebase 項目 ID.appspot.com",
-  messagingSenderId: "你的 Sender ID",
-  appId: "你的 App ID"
+  apiKey: "AIzaSyC5z8QTILs5qQqk4qrOFcPH3XXOYqNppmg",
+  authDomain: "barrow-system.firebaseapp.com",
+  projectId: "barrow-system",
+  storageBucket: "barrow-system.firebasestorage.app",
+  messagingSenderId: "14273318132",
+  appId: "1:14273318132:web:6553f3857f90a7f73062a1"
 };
 
 // 初始化 Firebase
