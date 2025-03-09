@@ -1,8 +1,12 @@
-import { useState } from "react";
-import { loginWithGoogle, logout } from "./firebase"; // 確保 Firebase 連接正確
+import { useState, useEffect } from "react";
+import { loginWithGoogle, logout } from "./firebase"; // 確保 firebase.js 存在
 
 function App() {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    console.log("React 應用已載入");
+  }, []);
 
   const handleLogin = async () => {
     try {
@@ -33,3 +37,4 @@ function App() {
 }
 
 export default App;
+
